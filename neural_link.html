@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroLink Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #101820;
+            color: white;
+        }
+        #chatbox {
+            width: 60%;
+            height: 400px;
+            border: 1px solid #444;
+            overflow-y: auto;
+            margin: auto;
+            padding: 10px;
+            text-align: left;
+            background-color: #1b2735;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #282c34;
+            color: white;
+            border: none;
+            outline: none;
+        }
+        button {
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #3a3f4b;
+        }
+    </style>
+</head>
+<body>
+    <h2>NeuroLink AI Chatbot</h2>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)" />
+    <button id="sendMessage">Send</button>
+
+    <script>
+        document.getElementById("sendMessage").addEventListener("click", sendMessage);
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            let userInputField = document.getElementById("userInput");
+            let chatbox = document.getElementById("chatbox");
+            let userInput = userInputField.value.trim();
+
+            if (!userInput) return;
+
+            chatbox.innerHTML += `<p><b>You:</b> ${userInput}</p>`;
+            userInputField.value = "";
+
+            fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatbox.innerHTML += `<p><b>NeuroLink:</b> ${data.response}</p>`;
+                chatbox.scrollTop = chatbox.scrollHeight;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                chatbox.innerHTML += `<p><b>NeuroLink:</b> Error communicating with the server.</p>`;
+            });
+        }
+    </script>
+</body>
+</html>
