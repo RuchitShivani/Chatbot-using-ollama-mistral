@@ -224,3 +224,8 @@ This project is open-source and free to use! 🚀
 
 🔥 Try it & Give a Star ⭐
 If you like this, consider giving it a ⭐ on GitHub!
+
+![Screenshot 2025-03-19 084447](https://github.com/user-attachments/assets/40d71bd3-c810-4986-8173-271e8e9a5a99)
+![Screenshot 2025-03-19 084515](https://github.com/user-attachments/assets/9387b7b0-9655-41e8-b956-cbb9b4cf75b1)
+![Screenshot 2025-03-19 084504](https://github.com/user-attachments/assets/ade28a78-6046-4264-8726-7240f4cd75b9)
+
