@@ -220,7 +220,7 @@ If using a GPU, check compatibility.
 ✅ Fully Private – No data leaves your system.
 
 📜 License
-This project is open-source and free to use! 🚀
+This project is open-source and free to use and easy to implement! 🚀
 
 🔥 Try it & Give a Star ⭐
 If you like this, consider giving it a ⭐ on GitHub!
