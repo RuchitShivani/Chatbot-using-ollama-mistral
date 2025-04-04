@@ -2,7 +2,7 @@ NeuroChat: Fast Local AI Chatbot using Mistral + Ollama
 NeuroChat is a local AI chatbot that runs on your machine using Mistral (an advanced LLM) via Ollama. It features a Flask backend and a simple HTML+JS frontend for interaction.
 
 ✨ Features
-✅ Runs completely offline – No API keys, no internet required.
+✅ Runs completely offline – No API keys, no internet required and thus is more efficient.
 ✅ Uses Ollama – Efficient LLM execution locally.
 ✅ Fast responses – Optimized for low-latency responses.
 ✅ Simple Web UI – Chat via a browser.
